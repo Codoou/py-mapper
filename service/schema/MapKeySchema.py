@@ -3,6 +3,24 @@ from jsonschema import validate
 class MapKeySchema():
 
     def __init__(self):
+
+
+        #[
+        #    {
+        #      "map": {
+        #          "Lname":"LastName"
+        #      },
+        #      "type": "str",
+        #      "type_validation": ['Raise', 'SilentlyContinue', 'MapWithoutTypeChange'] 1. Stop | 2. Don't Map, Don't Error | 3. Map with incorrect type
+        #    },
+        #    {
+        #      "map": {
+        #          "Fname":"FirstNameName"
+        #      },
+        #      "type": "str",
+        #      "type_validation": ['Raise', 'SilentlyContinue', 'MapWithoutTypeChange']
+        #    },
+        # ]
         self.schema = {
             "type": "object",
             

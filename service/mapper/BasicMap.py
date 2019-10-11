@@ -8,6 +8,11 @@ class BasicMap():
         _map_key = BasicMap._validatemapkey(map_key)
         return BasicMap._mapdata(input_object, _map_key)
 
+    @staticmethod
+    def MapList(input_list, map_key):
+        _map_key = BasicMap._validatemapkey(map_key)
+        return BasicMap._maplistdata(input_list, _map_key)
+
 
     @staticmethod
     def _validatemapkey(map_key):
@@ -40,4 +45,20 @@ class BasicMap():
             raise Exception("No values mapped.")
         return mapped_data
 
-        
+
+    @staticmethod
+    def _maplistdata(input_list, map_key):
+
+        mapped_data = []
+
+        for item in input_list:
+            new_item = {}
+            for k, v in item.items():
+                for ind_map in map_key:
+                    for km, vm in ind_map.items():
+                        if km in item:
+                            new_item[vm] = v
+            
+            mapped_data.append(new_item)
+                            
+        return mapped_data  

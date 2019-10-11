@@ -11,6 +11,7 @@ class MapKeySchema():
         #          "Lname":"LastName"
         #      },
         #      "type": "str",
+        #      "nullable": [True, False],
         #      "type_validation": ['Raise', 'SilentlyContinue', 'MapWithoutTypeChange'] 1. Stop | 2. Don't Map, Don't Error | 3. Map with incorrect type
         #    },
         #    {
@@ -18,6 +19,7 @@ class MapKeySchema():
         #          "Fname":"FirstNameName"
         #      },
         #      "type": "str",
+        #      "nullable": [True, False],
         #      "type_validation": ['Raise', 'SilentlyContinue', 'MapWithoutTypeChange']
         #    },
         # ]

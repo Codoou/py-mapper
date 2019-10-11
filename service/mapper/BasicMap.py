@@ -17,6 +17,14 @@ class BasicMap():
     @staticmethod
     def _validatemapkey(map_key):
         _map_key = None
+
+        try:
+            json.dumps(map_key)
+        except (TypeError, OverflowError):
+            print('Failure! :(')
+        else:
+            return map_key
+
         try:
             _map_key = json.loads(map_key)
         except json.decoder.JSONDecodeError as e:
@@ -54,9 +62,13 @@ class BasicMap():
         for item in input_list:
             new_item = {}
             for k, v in item.items():
+                print(f'k :{k}')
+                print(f'v :{v}')
                 for ind_map in map_key:
                     for km, vm in ind_map.items():
-                        if km in item:
+                        if km == k:
+                            print(f'km {km}')
+                            print(f'vm {vm}')
                             new_item[vm] = v
             
             mapped_data.append(new_item)

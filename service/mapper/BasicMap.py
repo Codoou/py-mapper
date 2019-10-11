@@ -6,7 +6,7 @@ class BasicMap():
     @staticmethod
     def Map(input_object, map_key):
         _map_key = BasicMap._validatemapkey(map_key)
-        BasicMap._mapdata(input_object, _map_key)
+        return BasicMap._mapdata(input_object, _map_key)
 
 
     @staticmethod
@@ -31,7 +31,13 @@ class BasicMap():
     def _mapdata(input_object, map_key):
 
         mapped_data = {}
-        for key in input_object & map_key:
-            print(key)
+        for ind_dict in map_key:
+            for k,v in ind_dict.items():
+                if k in input_object.keys():
+                    mapped_data[v] = input_object[k]
+
+        if mapped_data == {}:
+            raise Exception("No values mapped.")
+        return mapped_data
 
         
